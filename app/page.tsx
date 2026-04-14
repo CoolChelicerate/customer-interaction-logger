@@ -16,6 +16,8 @@ export default function Home() {
               <th>Group</th>
               <th>Report</th>
               <th>Status</th>
+              <th>Date/Time Reported</th>
+              <th>Date/Time Resolved</th>
               <th><button>Add New Log</button></th>
             </tr>
           </thead>
@@ -25,6 +27,8 @@ export default function Home() {
               <td>Employee</td>
               <td>Customer complains regarding restroom cleanliness</td>
               <td>Pending</td>
+              <td>4/10/2026 9:21</td>
+              <td>N/A</td>
               <td><button>Edit</button></td>
             </tr>
             <tr>
@@ -32,6 +36,8 @@ export default function Home() {
               <td>Employee</td>
               <td>Customer praised Mary's attitude</td>
               <td>Resolved</td>
+              <td>3/23/2026 14:23</td>
+              <td>3/28/2026 7:00</td>
               <td><button>Edit</button></td>
             </tr>
             <tr>
@@ -39,6 +45,8 @@ export default function Home() {
               <td>Customer</td>
               <td>Water leaking near deli</td>
               <td>Urgent</td>
+              <td>4/14/2026 20:04</td>
+              <td>N/A</td>
               <td><button>Edit</button></td>
             </tr>
             </tbody>
