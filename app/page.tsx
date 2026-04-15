@@ -3,6 +3,9 @@
 import { useEffect, useState } from "react";
 import "./globals.css";
 
+import { LineChart, PieChart } from 'react-chartkick'
+import "chartkick/chart.js"
+ 
 export default function Home() {
   let urgentLogs = 9, newLogs = 5, openLogs = 17, closedLogs = 184;
   return (
