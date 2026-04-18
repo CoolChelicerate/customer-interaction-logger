@@ -32,20 +32,28 @@ export default function Home() {
   const openLogs = logs.filter(log => log.status === "Open").length;
   const closedLogs = logs.filter(log => log.status === "Resolved").length;
 
+  const [editIndex, setEditIndex] = useState<number | null>(null);
+
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>){
     setForm({...form, [e.target.name]: e.target.value});
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: React.ChangeEvent) {
     e.preventDefault();
 
     const now = new Date();
     const dateReported = `${now.getMonth()+1}/${now.getDate()}/${now.getFullYear()} ${now.getHours()}:${String(now.getMinutes()).padStart(2, '0')}`;
 
+    if (editIndex !== null) {
+      const updated = [...logs];
+      updated[editIndex] = {...form, dateReported: logs[editIndex].dateReported};
+      setLogs(updated);
+      setEditIndex(null);
+    } else {
     setLogs([...logs, {...form, dateReported}]);
+    }
 
     setForm(emptyForm);
-
     setShowModal(false);
   }
   return (
@@ -89,7 +97,11 @@ export default function Home() {
                 <td>{log.status}</td>
                 <td>{log.dateReported}</td>
                 <td>{log.dateResolved}</td>
-                <td><button>Edit</button></td>
+                <td><button onClick={() => {
+                  setForm(logs[i]);
+                  setEditIndex(i);
+                  setShowModal(true);
+                }}>Edit</button></td>
               </tr>
             ))}
           </tbody>
@@ -116,7 +128,6 @@ export default function Home() {
                 <label>Status</label>
                 <select name="status" value={form.status} onChange={handleChange}>
                   <option value="New">New</option>
-                  <option value="Pending">Pending</option>
                   <option value="Open">Open</option>
                   <option value="Urgent">Urgent</option>
                   <option value="Resolved">Resolved</option>
