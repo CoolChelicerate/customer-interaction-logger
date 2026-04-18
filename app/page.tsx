@@ -65,14 +65,14 @@ export default function Home() {
   }
   return (
     <div>
-      <h1>Customer Interaction Logger Application</h1>
+      <h1 id="app-title">Customer Interaction Logger Application</h1>
       <hr className="header-hr"/>
 
       <div className="dashboard">
         <div className="dash-col">Report Status
           <PieChart data={statusChartData} />
         </div>
-        <div className="dash-col">Frequent Issues</div>
+        <div className="dash-col">Urgent Issues</div>
         <div className="dash-col">Frequent Issues by Department</div>
       </div>
       

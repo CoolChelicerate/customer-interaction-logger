@@ -1,3 +1,7 @@
+h1 {
+    text-align: center;
+}
+
 .modal-overlay {
     position: fixed;
     inset: 0;
@@ -75,7 +79,7 @@
 
 .dash-col {
     font-size: x-large;
-    font-weight: 500;
+    font-weight: 800;
     flex: 1;
     width: 25%;
     height: 350px;
@@ -148,6 +152,12 @@
     }
 }
 
+.log-table {
+    width: 75%;
+    table-layout: fixed;
+    text-align: center;
+}
+
 .log-table table, th, td {
     border: 1.5px solid black;
 }
@@ -158,6 +168,12 @@
 
 .log-table th {
     background-color: lightblue;
+}
+
+.agent-table {
+    width: 75%;
+    table-layout: fixed;
+    text-align: center;
 }
 
 .agent-table th {
