@@ -78,6 +78,7 @@ export default function Home() {
     <div>
       <h1 id="app-title">Customer Interaction Logger Application</h1>
       <hr className="header-hr" />
+      <h1>Dashboard</h1>
 
       <div className="dashboard">
         <div className="dash-col">

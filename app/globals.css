@@ -2,6 +2,10 @@ h1 {
   text-align: center;
 }
 
+button {
+  cursor: pointer;
+}
+
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -126,19 +130,24 @@ h1 {
 
 #urgent-log-col {
   background-color: royalblue;
+  color: white;
 }
 
 #new-log-col {
   background-color: red;
+  color: white;
 }
 
 #open-log-col {
   background-color: orange;
+  color: white;
 }
 
 #closed-log-col {
   background-color: green;
+  color: white;
 }
+
 .log-summary-hr {
   border: solid;
   border-color: black;
@@ -159,35 +168,49 @@ h1 {
 
 .log-table {
   width: 100%;
-  table-layout: fixed;
   text-align: center;
+}
+
+.log-table table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.log-table th,
+.log-table td {
+  border: 0px solid black;
+  padding: 5px;
+}
+
+.log-table th {
+  background-color: #04aa6d;
+  color: white;
 }
 
 #log-desc {
   text-align: justify;
 }
 
-.log-table table,
-th,
-td {
-  border: 1.5px solid black;
-}
-
-.log-table th,
-td {
-  padding: 5px;
-}
-
-.log-table th {
-  background-color: lightblue;
-}
-
 .agent-table {
   width: 100%;
-  table-layout: fixed;
   text-align: center;
 }
 
+.agent-table table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.agent-table th,
+.agent-table td {
+  border: 0px solid black;
+  padding: 5px;
+  gap: 0px;
+}
+
 .agent-table th {
-  background-color: lightblue;
+  background-color: #04aa6d;
+  color: white;
 }
