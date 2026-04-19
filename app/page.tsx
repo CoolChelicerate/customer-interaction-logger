@@ -30,6 +30,7 @@ export default function Home() {
   const [logs, setLogs] = useState<Log[]>(initialLogs);
   const [showModal, setShowModal] = useState(false);
   const [form, setForm] = useState<Log>(emptyForm);
+  const [isChartReady, setIsChartReady] = useState(false);
 
   const urgentLogs = logs.filter((log) => log.status === "Urgent").length;
   const newLogs = logs.filter((log) => log.status === "New").length;
@@ -44,6 +45,10 @@ export default function Home() {
     Open: openLogs,
     Closed: closedLogs,
   };
+
+  useEffect(() => {
+    setIsChartReady(true);
+  }, []);
 
   function handleChange(
     e: React.ChangeEvent<
@@ -83,7 +88,7 @@ export default function Home() {
       <div className="dashboard">
         <div className="dash-col">
           Report Status
-          <PieChart data={statusChartData} />
+          {isChartReady && <PieChart data={statusChartData} />}
         </div>
         <div className="dash-col" id="dash-urgent">
           Urgent Issues
@@ -131,7 +136,12 @@ export default function Home() {
             <th>Date/Time Reported</th>
             <th>Date/Time Resolved</th>
             <th>
-              <button onClick={() => setShowModal(true)}>Create New Log</button>
+              <button
+                className="new-log-button"
+                onClick={() => setShowModal(true)}
+              >
+                Create New Log
+              </button>
             </th>
           </tr>
         </thead>
