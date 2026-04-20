@@ -388,7 +388,7 @@ export default function Home() {
         </div>
       </div>
       <h2 className="logs-header">
-        <i className="fa-solid fa-file-lines"></i> Logs{" "}
+        <i className="fa-solid fa-file-lines"></i> Logs
         <select
           className="logs-filter-dropdown"
           value={filterBy}

@@ -131,21 +131,25 @@ h1 {
 #urgent-log-col {
   background-color: #b22222;
   color: white;
+  gap: 8px;
 }
 
 #new-log-col {
   background-color: #006400;
   color: white;
+  gap: 8px;
 }
 
 #open-log-col {
   background-color: #00008b;
   color: white;
+  gap: 8px;
 }
 
 #closed-log-col {
   background-color: #daa520;
   color: white;
+  gap: 8px;
 }
 
 .log-summary-hr {
@@ -167,13 +171,16 @@ h1 {
 }
 
 .logs-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 50px;
 }
 
 .logs-filter-dropdown {
   font-family: "Inter", sans-serif;
-  padding: 6px 10px;
-  font-size: 16px;
+  padding: 4px 10px;
+  font-size: 20px;
   border: 2px solid black;
   border-radius: 8px;
   cursor: pointer;
@@ -223,6 +230,7 @@ h1 {
 
 .agents-header {
   font-size: 50px;
+  gap: 8px;
 }
 
 .agent-table {
