@@ -8,6 +8,8 @@ import "./globals.css";
 import { LineChart } from "react-chartkick";
 import "chartkick/chart.js";
 
+import logo from "../assets/logo.png";
+
 type PieChartProps = {
   data: Record<string, number>;
   colors?: string[];
@@ -353,7 +355,7 @@ export default function Home() {
         strategy="beforeInteractive"
       />
       <div>
-        <h1 id="app-title">Customer Interaction Logger Application</h1>
+        <img src={logo.src} alt="Logo" style={{ height: "200px" }} />
       </div>
       <div className="topnav">
         <a className="active" href="#home">
