@@ -28,7 +28,7 @@ type Agent = {
 
 type Log = {
   name: string;
-  group: string;
+  category: string;
   description: string;
   status: string;
   dateReported: string;
@@ -39,7 +39,7 @@ const initialLogs: Log[] = [];
 
 const emptyForm: Log = {
   name: "",
-  group: "",
+  category: "",
   description: "",
   status: "New",
   dateReported: "",
@@ -122,7 +122,7 @@ export default function Home() {
     const sampleLogs: Log[] = [
       {
         name: "John Smith",
-        group: "",
+        category: "Account",
         description: "Login issue",
         status: "Resolved",
         dateReported: "4/19/2026 10:00",
@@ -130,7 +130,7 @@ export default function Home() {
       },
       {
         name: "Jane Doe",
-        group: "",
+        category: "Billing",
         description: "Payment failed",
         status: "Open",
         dateReported: "4/19/2026 9:30",
@@ -138,7 +138,7 @@ export default function Home() {
       },
       {
         name: "Bob Johnson",
-        group: "",
+        category: "Account",
         description: "Account locked",
         status: "Urgent",
         dateReported: "4/19/2026 8:45",
@@ -146,7 +146,7 @@ export default function Home() {
       },
       {
         name: "Alice Brown",
-        group: "",
+        category: "Account",
         description: "Password reset",
         status: "New",
         dateReported: "4/19/2026 12:00",
@@ -154,7 +154,7 @@ export default function Home() {
       },
       {
         name: "Charlie Wilson",
-        group: "",
+        category: "Client-side",
         description: "App crashes",
         status: "Open",
         dateReported: "4/18/2026 15:20",
@@ -162,7 +162,7 @@ export default function Home() {
       },
       {
         name: "Diana Prince",
-        group: "",
+        category: "Miscellaneous",
         description: "Feature request",
         status: "New",
         dateReported: "4/18/2026 14:10",
@@ -170,7 +170,7 @@ export default function Home() {
       },
       {
         name: "Eve Adams",
-        group: "",
+        category: "Billing",
         description: "Billing inquiry",
         status: "Resolved",
         dateReported: "4/17/2026 11:30",
@@ -178,7 +178,7 @@ export default function Home() {
       },
       {
         name: "Frank Miller",
-        group: "",
+        category: "Server-side",
         description: "Slow performance",
         status: "Urgent",
         dateReported: "4/17/2026 10:15",
@@ -186,7 +186,7 @@ export default function Home() {
       },
       {
         name: "Grace Lee",
-        group: "",
+        category: "Server-side",
         description: "Data sync issue",
         status: "Open",
         dateReported: "4/16/2026 16:45",
@@ -194,7 +194,7 @@ export default function Home() {
       },
       {
         name: "Henry Ford",
-        group: "",
+        category: "Server-side",
         description: "UI bug",
         status: "New",
         dateReported: "4/16/2026 13:20",
@@ -202,7 +202,7 @@ export default function Home() {
       },
       {
         name: "Ivy Chen",
-        group: "",
+        category: "Server-side",
         description: "Email not received",
         status: "Resolved",
         dateReported: "4/15/2026 9:00",
@@ -210,7 +210,7 @@ export default function Home() {
       },
       {
         name: "Jack Ryan",
-        group: "",
+        category: "Server-side",
         description: "Security concern",
         status: "Urgent",
         dateReported: "4/15/2026 8:30",
@@ -218,7 +218,7 @@ export default function Home() {
       },
       {
         name: "Kate Moss",
-        group: "",
+        category: "Server-side",
         description: "Mobile app issue",
         status: "Open",
         dateReported: "4/14/2026 17:10",
@@ -226,7 +226,7 @@ export default function Home() {
       },
       {
         name: "Liam Neeson",
-        group: "",
+        category: "Account",
         description: "Account upgrade",
         status: "New",
         dateReported: "4/14/2026 14:45",
@@ -234,7 +234,7 @@ export default function Home() {
       },
       {
         name: "Mia Khalifa",
-        group: "",
+        category: "Billing",
         description: "Refund request",
         status: "Resolved",
         dateReported: "4/13/2026 12:00",
@@ -242,7 +242,7 @@ export default function Home() {
       },
       {
         name: "Noah Ark",
-        group: "",
+        category: "Server-side",
         description: "API error",
         status: "Urgent",
         dateReported: "4/13/2026 11:15",
@@ -250,7 +250,7 @@ export default function Home() {
       },
       {
         name: "Olivia Pope",
-        group: "",
+        category: "Server-side",
         description: "Login timeout",
         status: "Open",
         dateReported: "4/12/2026 15:30",
@@ -258,7 +258,7 @@ export default function Home() {
       },
       {
         name: "Peter Parker",
-        group: "",
+        category: "Miscellaneous",
         description: "Spider sense tingling",
         status: "New",
         dateReported: "4/12/2026 13:00",
@@ -266,7 +266,7 @@ export default function Home() {
       },
       {
         name: "Quinn Fabray",
-        group: "",
+        category: "Client-side",
         description: "Voice call issue",
         status: "Resolved",
         dateReported: "4/11/2026 10:45",
@@ -274,7 +274,7 @@ export default function Home() {
       },
       {
         name: "Ryan Gosling",
-        group: "",
+        category: "Account",
         description: "Profile update",
         status: "New",
         dateReported: "4/11/2026 9:20",
@@ -446,6 +446,7 @@ export default function Home() {
         <thead>
           <tr>
             <th>Name</th>
+            <th>Category</th>
             <th>Description</th>
             <th>Status</th>
             <th>Date/Time Reported</th>
@@ -464,6 +465,7 @@ export default function Home() {
           {displayedLogs.map((log, i) => (
             <tr key={i}>
               <td>{log.name}</td>
+              <td>{log.category}</td>
               <td id="log-desc">{log.description}</td>
               <td>{log.status}</td>
               <td>{log.dateReported}</td>
@@ -496,6 +498,19 @@ export default function Home() {
                 onChange={handleObjectChange(setForm)}
                 required
               />
+
+              <label>Category</label>
+              <select
+                name="category"
+                value={form.category}
+                onChange={handleObjectChange(setForm)}
+              >
+                <option value="Billing">Billing</option>
+                <option value="Account">Account</option>
+                <option value="Server-side">Server-side</option>
+                <option value="Client-side">Client-side</option>
+                <option value="Miscellaneous">Miscellaneous</option>
+              </select>
 
               <label>Description</label>
               <textarea
