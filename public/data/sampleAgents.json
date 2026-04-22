@@ -1,0 +1,49 @@
+[
+  {
+    "name": "John Doe",
+    "position": "Custodian",
+    "department": "Sanitation"
+  },
+
+  { "name": "Jane Doe", "position": "Manager", "department": "Front End" },
+
+  { "name": "Mary Alvarez", "position": "Cashier", "department": "Front End" },
+
+  { "name": "Bob Smith", "position": "Developer", "department": "Back End" },
+
+  { "name": "Alice Johnson", "position": "Designer", "department": "UI/UX" },
+
+  { "name": "Charlie Brown", "position": "Analyst", "department": "Data" },
+
+  {
+    "name": "Diana Ross",
+    "position": "Support Lead",
+    "department": "Customer Service"
+  },
+  {
+    "name": "Eve Wilson",
+    "position": "QA Tester",
+    "department": "Quality Assurance"
+  },
+  {
+    "name": "Frank Sinatra",
+    "position": "DevOps Engineer",
+    "department": "Infrastructure"
+  },
+  {
+    "name": "Grace Hopper",
+    "position": "Senior Developer",
+    "department": "Back End"
+  },
+  {
+    "name": "Henry Ford",
+    "position": "Product Manager",
+    "department": "Product"
+  },
+  { "name": "Ivy League", "position": "Intern", "department": "Front End" },
+  {
+    "name": "Jack Sparrow",
+    "position": "Security Specialist",
+    "department": "Security"
+  }
+]

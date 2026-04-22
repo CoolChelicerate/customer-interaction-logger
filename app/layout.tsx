@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "",
@@ -19,7 +20,14 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        <Script
+          src="https://kit.fontawesome.com/32c2532505.js"
+          crossOrigin="anonymous"
+          strategy="beforeInteractive"
+        />
+        {children}
+      </body>
     </html>
   );
 }

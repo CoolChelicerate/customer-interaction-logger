@@ -1,0 +1,162 @@
+[
+  {
+    "name": "John Smith",
+    "category": "Account",
+    "description": "Login issue",
+    "status": "Resolved",
+    "dateReported": "4/19/2026 10:00",
+    "dateResolved": "4/19/2026 11:00"
+  },
+  {
+    "name": "Jane Doe",
+    "category": "Billing",
+    "description": "Payment failed",
+    "status": "Open",
+    "dateReported": "4/19/2026 9:30",
+    "dateResolved": "N/A"
+  },
+  {
+    "name": "Bob Johnson",
+    "category": "Account",
+    "description": "Account locked",
+    "status": "Urgent",
+    "dateReported": "4/19/2026 8:45",
+    "dateResolved": "N/A"
+  },
+  {
+    "name": "Alice Brown",
+    "category": "Account",
+    "description": "Password reset",
+    "status": "New",
+    "dateReported": "4/19/2026 12:00",
+    "dateResolved": "N/A"
+  },
+  {
+    "name": "Charlie Wilson",
+    "category": "Client-side",
+    "description": "App crashes",
+    "status": "Open",
+    "dateReported": "4/18/2026 15:20",
+    "dateResolved": "N/A"
+  },
+  {
+    "name": "Diana Prince",
+    "category": "Miscellaneous",
+    "description": "Feature request",
+    "status": "New",
+    "dateReported": "4/18/2026 14:10",
+    "dateResolved": "N/A"
+  },
+  {
+    "name": "Eve Adams",
+    "category": "Billing",
+    "description": "Billing inquiry",
+    "status": "Resolved",
+    "dateReported": "4/17/2026 11:30",
+    "dateResolved": "4/17/2026 12:00"
+  },
+  {
+    "name": "Frank Miller",
+    "category": "Server-side",
+    "description": "Slow performance",
+    "status": "Urgent",
+    "dateReported": "4/17/2026 10:15",
+    "dateResolved": "N/A"
+  },
+  {
+    "name": "Grace Lee",
+    "category": "Server-side",
+    "description": "Data sync issue",
+    "status": "Open",
+    "dateReported": "4/16/2026 16:45",
+    "dateResolved": "N/A"
+  },
+  {
+    "name": "Henry Ford",
+    "category": "Server-side",
+    "description": "UI bug",
+    "status": "New",
+    "dateReported": "4/16/2026 13:20",
+    "dateResolved": "N/A"
+  },
+  {
+    "name": "Ivy Chen",
+    "category": "Server-side",
+    "description": "Email not received",
+    "status": "Resolved",
+    "dateReported": "4/15/2026 9:00",
+    "dateResolved": "4/15/2026 9:30"
+  },
+  {
+    "name": "Jack Ryan",
+    "category": "Server-side",
+    "description": "Security concern",
+    "status": "Urgent",
+    "dateReported": "4/15/2026 8:30",
+    "dateResolved": "N/A"
+  },
+  {
+    "name": "Kate Moss",
+    "category": "Server-side",
+    "description": "Mobile app issue",
+    "status": "Open",
+    "dateReported": "4/14/2026 17:10",
+    "dateResolved": "N/A"
+  },
+  {
+    "name": "Liam Neeson",
+    "category": "Account",
+    "description": "Account upgrade",
+    "status": "New",
+    "dateReported": "4/14/2026 14:45",
+    "dateResolved": "N/A"
+  },
+  {
+    "name": "Mia Khalifa",
+    "category": "Billing",
+    "description": "Refund request",
+    "status": "Resolved",
+    "dateReported": "4/13/2026 12:00",
+    "dateResolved": "4/13/2026 12:30"
+  },
+  {
+    "name": "Noah Ark",
+    "category": "Server-side",
+    "description": "API error",
+    "status": "Urgent",
+    "dateReported": "4/13/2026 11:15",
+    "dateResolved": "N/A"
+  },
+  {
+    "name": "Olivia Pope",
+    "category": "Server-side",
+    "description": "Login timeout",
+    "status": "Open",
+    "dateReported": "4/12/2026 15:30",
+    "dateResolved": "N/A"
+  },
+  {
+    "name": "Peter Parker",
+    "category": "Miscellaneous",
+    "description": "Spider sense tingling",
+    "status": "New",
+    "dateReported": "4/12/2026 13:00",
+    "dateResolved": "N/A"
+  },
+  {
+    "name": "Quinn Fabray",
+    "category": "Client-side",
+    "description": "Voice call issue",
+    "status": "Resolved",
+    "dateReported": "4/11/2026 10:45",
+    "dateResolved": "4/11/2026 11:15"
+  },
+  {
+    "name": "Ryan Gosling",
+    "category": "Account",
+    "description": "Profile update",
+    "status": "New",
+    "dateReported": "4/11/2026 9:20",
+    "dateResolved": "N/A"
+  }
+]

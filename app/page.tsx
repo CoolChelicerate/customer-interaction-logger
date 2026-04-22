@@ -1,14 +1,14 @@
 "use client";
 
+import Header from "./components/Header";
+import Dashboard from "./components/Dashboard";
+import LogTable from "./components/LogTable";
+import LogModal from "./components/LogModal";
+
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-import Script from "next/script";
 import "./globals.css";
-
-import { LineChart } from "react-chartkick";
 import "chartkick/chart.js";
-
-import logo from "../assets/logo.png";
 
 type PieChartProps = {
   data: Record<string, number>;
@@ -127,211 +127,13 @@ export default function Home() {
   }, []);
 
   function loadSampleData() {
-    const sampleLogs: Log[] = [
-      {
-        name: "John Smith",
-        category: "Account",
-        description: "Login issue",
-        status: "Resolved",
-        dateReported: "4/19/2026 10:00",
-        dateResolved: "4/19/2026 11:00",
-      },
-      {
-        name: "Jane Doe",
-        category: "Billing",
-        description: "Payment failed",
-        status: "Open",
-        dateReported: "4/19/2026 9:30",
-        dateResolved: "N/A",
-      },
-      {
-        name: "Bob Johnson",
-        category: "Account",
-        description: "Account locked",
-        status: "Urgent",
-        dateReported: "4/19/2026 8:45",
-        dateResolved: "N/A",
-      },
-      {
-        name: "Alice Brown",
-        category: "Account",
-        description: "Password reset",
-        status: "New",
-        dateReported: "4/19/2026 12:00",
-        dateResolved: "N/A",
-      },
-      {
-        name: "Charlie Wilson",
-        category: "Client-side",
-        description: "App crashes",
-        status: "Open",
-        dateReported: "4/18/2026 15:20",
-        dateResolved: "N/A",
-      },
-      {
-        name: "Diana Prince",
-        category: "Miscellaneous",
-        description: "Feature request",
-        status: "New",
-        dateReported: "4/18/2026 14:10",
-        dateResolved: "N/A",
-      },
-      {
-        name: "Eve Adams",
-        category: "Billing",
-        description: "Billing inquiry",
-        status: "Resolved",
-        dateReported: "4/17/2026 11:30",
-        dateResolved: "4/17/2026 12:00",
-      },
-      {
-        name: "Frank Miller",
-        category: "Server-side",
-        description: "Slow performance",
-        status: "Urgent",
-        dateReported: "4/17/2026 10:15",
-        dateResolved: "N/A",
-      },
-      {
-        name: "Grace Lee",
-        category: "Server-side",
-        description: "Data sync issue",
-        status: "Open",
-        dateReported: "4/16/2026 16:45",
-        dateResolved: "N/A",
-      },
-      {
-        name: "Henry Ford",
-        category: "Server-side",
-        description: "UI bug",
-        status: "New",
-        dateReported: "4/16/2026 13:20",
-        dateResolved: "N/A",
-      },
-      {
-        name: "Ivy Chen",
-        category: "Server-side",
-        description: "Email not received",
-        status: "Resolved",
-        dateReported: "4/15/2026 9:00",
-        dateResolved: "4/15/2026 9:30",
-      },
-      {
-        name: "Jack Ryan",
-        category: "Server-side",
-        description: "Security concern",
-        status: "Urgent",
-        dateReported: "4/15/2026 8:30",
-        dateResolved: "N/A",
-      },
-      {
-        name: "Kate Moss",
-        category: "Server-side",
-        description: "Mobile app issue",
-        status: "Open",
-        dateReported: "4/14/2026 17:10",
-        dateResolved: "N/A",
-      },
-      {
-        name: "Liam Neeson",
-        category: "Account",
-        description: "Account upgrade",
-        status: "New",
-        dateReported: "4/14/2026 14:45",
-        dateResolved: "N/A",
-      },
-      {
-        name: "Mia Khalifa",
-        category: "Billing",
-        description: "Refund request",
-        status: "Resolved",
-        dateReported: "4/13/2026 12:00",
-        dateResolved: "4/13/2026 12:30",
-      },
-      {
-        name: "Noah Ark",
-        category: "Server-side",
-        description: "API error",
-        status: "Urgent",
-        dateReported: "4/13/2026 11:15",
-        dateResolved: "N/A",
-      },
-      {
-        name: "Olivia Pope",
-        category: "Server-side",
-        description: "Login timeout",
-        status: "Open",
-        dateReported: "4/12/2026 15:30",
-        dateResolved: "N/A",
-      },
-      {
-        name: "Peter Parker",
-        category: "Miscellaneous",
-        description: "Spider sense tingling",
-        status: "New",
-        dateReported: "4/12/2026 13:00",
-        dateResolved: "N/A",
-      },
-      {
-        name: "Quinn Fabray",
-        category: "Client-side",
-        description: "Voice call issue",
-        status: "Resolved",
-        dateReported: "4/11/2026 10:45",
-        dateResolved: "4/11/2026 11:15",
-      },
-      {
-        name: "Ryan Gosling",
-        category: "Account",
-        description: "Profile update",
-        status: "New",
-        dateReported: "4/11/2026 9:20",
-        dateResolved: "N/A",
-      },
-    ];
+    fetch("data/sampleLogs.json")
+      .then((res) => res.json())
+      .then((data) => setLogs(data));
 
-    const sampleAgents: Agent[] = [
-      { name: "John Doe", position: "Custodian", department: "Sanitation" },
-      { name: "Jane Doe", position: "Manager", department: "Front End" },
-      { name: "Mary Alvarez", position: "Cashier", department: "Front End" },
-      { name: "Bob Smith", position: "Developer", department: "Back End" },
-      { name: "Alice Johnson", position: "Designer", department: "UI/UX" },
-      { name: "Charlie Brown", position: "Analyst", department: "Data" },
-      {
-        name: "Diana Ross",
-        position: "Support Lead",
-        department: "Customer Service",
-      },
-      {
-        name: "Eve Wilson",
-        position: "QA Tester",
-        department: "Quality Assurance",
-      },
-      {
-        name: "Frank Sinatra",
-        position: "DevOps Engineer",
-        department: "Infrastructure",
-      },
-      {
-        name: "Grace Hopper",
-        position: "Senior Developer",
-        department: "Back End",
-      },
-      {
-        name: "Henry Ford",
-        position: "Product Manager",
-        department: "Product",
-      },
-      { name: "Ivy League", position: "Intern", department: "Front End" },
-      {
-        name: "Jack Sparrow",
-        position: "Security Specialist",
-        department: "Security",
-      },
-    ];
-
-    setLogs(sampleLogs);
-    setAgents(sampleAgents);
+    fetch("/data/sampleAgents.json")
+      .then((res) => res.json())
+      .then((data) => setAgents(data));
   }
 
   function handleLogSubmit(e: React.ChangeEvent<HTMLFormElement>) {
@@ -357,79 +159,16 @@ export default function Home() {
   }
   return (
     <>
-      <Script
-        src="https://kit.fontawesome.com/32c2532505.js"
-        crossOrigin="anonymous"
-        strategy="beforeInteractive"
+      <Header />
+      <Dashboard
+        logs={logs}
+        statusChartData={statusChartData}
+        statusChartColors={statusChartColors}
+        categoryCounts={categoryCounts}
+        isChartReady={isChartReady}
+        loadSampleData={loadSampleData}
       />
-      <div>
-        <img src={logo.src} alt="Logo" style={{ height: "200px" }} />
-      </div>
-      <div className="topnav">
-        <a className="active" href="#home">
-          Home
-        </a>
-        <a href="#about">About</a>
-        <a href="#profile">Profile</a>
-        <a href="#settings">Settings</a>
-      </div>
-      <hr className="header-hr" />
-      <h1>Dashboard</h1>
-      <button
-        onClick={loadSampleData}
-        style={{
-          marginBottom: "20px",
-          padding: "10px 20px",
-          fontSize: "16px",
-        }}
-      >
-        Load Sample Data
-      </button>
-      <div className="dashboard">
-        <div className="dash-col">
-          Report Status
-          {isChartReady && (
-            <PieChart data={statusChartData} colors={statusChartColors} />
-          )}
-        </div>
-        <div className="dash-col" id="dash-urgent">
-          Urgent Issues
-          {logs.filter((log) => log.status === "Urgent").length > 0 ? (
-            <ul className="urgent-list">
-              {logs
-                .filter((log) => log.status === "Urgent")
-                .map((log, i) => (
-                  <li key={i}>
-                    {log.name} - {log.description}
-                  </li>
-                ))}
-            </ul>
-          ) : (
-            <p style={{ fontSize: "25px" }}>All urgent issues resolved!</p>
-          )}
-        </div>
-        <div className="dash-col" id="dash-freq">
-          Frequent Issues by Category
-          {logs.length > 0 ? (
-            <ul>
-              {Object.entries(categoryCounts)
-                .sort((a, b) => b[1] - a[1])
-                .map(([category, count], i) => (
-                  <li key={i}>
-                    <span
-                      className={`category-pill ${category.toLowerCase().replace("-", "")}`}
-                    >
-                      {category}
-                    </span>
-                    : {count}
-                  </li>
-                ))}
-            </ul>
-          ) : (
-            <p style={{ fontSize: "14px" }}>No data yet</p>
-          )}
-        </div>
-      </div>
+      {/*-------------------TODO: logSummary.tsx---------------------------*/}
       <hr className="log-summary-hr" />
       <div className="log-summary">
         <div className="log-col" id="urgent-log-col">
@@ -447,137 +186,33 @@ export default function Home() {
           <i className="fa-solid fa-lock"></i>Closed Logs: {closedLogs}
         </div>
       </div>
-      <h2 className="logs-header">
-        <i className="fa-solid fa-file-lines"></i> Logs
-        <select
-          className="logs-filter-dropdown"
-          value={filterBy}
-          onChange={handleSelectChange(setFilterBy)}
-        >
-          <option value="none">All</option>
-          <option value="urgent">Urgent</option>
-          <option value="new">New</option>
-          <option value="open">Open</option>
-          <option value="resolved">Resolved</option>
-          <option value="recent">Recent (last 24 hours)</option>
-        </select>
-        <input
-          className="log-searchbar"
-          type="text"
-          placeholder="Search..."
-          value={searchTerm}
-          onChange={handleInputChange(setSearchTerm)}
-        ></input>
-      </h2>
-
-      <table className="log-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Description</th>
-            <th>Status</th>
-            <th>Date/Time Reported</th>
-            <th>Date/Time Resolved</th>
-            <th>
-              <button
-                className="new-log-button"
-                onClick={() => setShowModal(true)}
-              >
-                <i className="fa-solid fa-plus"></i>
-              </button>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {displayedLogs.map((log, i) => (
-            <tr key={i}>
-              <td>{log.name}</td>
-              <td>{log.category}</td>
-              <td id="log-desc">{log.description}</td>
-              <td>{log.status}</td>
-              <td>{log.dateReported}</td>
-              <td>{log.dateResolved}</td>
-              <td>
-                <button
-                  className="edit-btn"
-                  onClick={() => {
-                    setForm(logs[i]);
-                    setEditIndex(i);
-                    setShowModal(true);
-                  }}
-                >
-                  <i className="fa-solid fa-pen-to-square"></i>
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      {showModal && (
-        <div className="modal-overlay">
-          <div className="modal">
-            <h3>New Log</h3>
-            <form onSubmit={handleLogSubmit}>
-              <label>Name</label>
-              <input
-                name="name"
-                value={form.name}
-                onChange={handleObjectChange(setForm)}
-                required
-              />
-
-              <label>Category</label>
-              <select
-                name="category"
-                value={form.category}
-                onChange={handleObjectChange(setForm)}
-              >
-                <option value="Billing">Billing</option>
-                <option value="Account">Account</option>
-                <option value="Server-side">Server-side</option>
-                <option value="Client-side">Client-side</option>
-                <option value="Miscellaneous">Miscellaneous</option>
-              </select>
-
-              <label>Description</label>
-              <textarea
-                name="description"
-                value={form.description}
-                onChange={handleObjectChange(setForm)}
-                required
-              />
-
-              <label>Status</label>
-              <select
-                name="status"
-                value={form.status}
-                onChange={handleObjectChange(setForm)}
-              >
-                <option value="New">New</option>
-                <option value="Open">Open</option>
-                <option value="Urgent">Urgent</option>
-                <option value="Resolved">Resolved</option>
-              </select>
-
-              <label>Date/Time Resolved</label>
-              <input
-                name="dateResolved"
-                value={form.dateResolved}
-                onChange={handleObjectChange(setForm)}
-                placeholder="N/A"
-              />
-
-              <div className="modal-actions">
-                <button type="submit">Submit</button>
-                <button type="button" onClick={() => setShowModal(false)}>
-                  Cancel
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
+      {/*------------------------------------------------------------------*/}
+      <LogTable
+        displayedLogs={displayedLogs}
+        logs={logs}
+        filterBy={filterBy}
+        setFilterBy={setFilterBy}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        onEdit={(i) => {
+          setForm(logs[i]);
+          setEditIndex(i);
+          setShowModal(true);
+        }}
+        onAdd={() => setShowModal(true)}
+      />
+      <LogModal
+        showModal={showModal}
+        form={form}
+        editIndex={editIndex}
+        onSubmit={handleLogSubmit}
+        onChange={handleObjectChange(setForm)}
+        onClose={() => {
+          setShowModal(false);
+          setEditIndex(null);
+          setForm(emptyForm);
+        }}
+      />
       <h2 className="agents-header">
         <i className="fa-solid fa-user-tie"></i> Agents
       </h2>
