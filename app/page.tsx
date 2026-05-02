@@ -1,16 +1,16 @@
 "use client";
 
-import Header from "./components/Header";
-import Dashboard from "./components/Dashboard";
-import LogTable from "./components/LogTable";
-import LogModal from "./components/LogModal";
-import Footer from "./components/Footer";
+import Header from "./components/Header/Header";
+import Dashboard from "./components/Dashboard/Dashboard";
+import LogTable from "./components/LogTable/LogTable";
+import LogModal from "./components/LogModal/LogModal";
+import Footer from "./components/Footer/Footer";
 
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import "./globals.css";
 import "chartkick/chart.js";
-import AgentTable from "./components/AgentsTable";
+import AgentTable from "./components/AgentsTable/AgentsTable";
 
 type PieChartProps = {
   data: Record<string, number>;

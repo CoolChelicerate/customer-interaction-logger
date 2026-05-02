@@ -1,6 +1,6 @@
 import "chartkick/chart.js";
 import dynamic from "next/dynamic";
-import { Log } from "../types";
+import { Log } from "../../types";
 
 type PieChartProps = {
   data: Record<string, number>;

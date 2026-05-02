@@ -1,5 +1,6 @@
-import logo from "../assets/logo.png";
+import logo from "../../assets/logo.png";
 import Script from "next/script";
+import "./Header.css";
 
 export default function Header() {
   return (

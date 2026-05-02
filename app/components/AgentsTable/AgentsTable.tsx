@@ -1,4 +1,4 @@
-import { Agent } from "../types";
+import { Agent } from "../../types";
 
 type AgentTableProps = {
   agents: Agent[];

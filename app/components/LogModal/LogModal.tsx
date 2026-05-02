@@ -1,4 +1,4 @@
-import { Log } from "../types";
+import { Log } from "../../types";
 
 type LogModalProps = {
   showModal: boolean;
